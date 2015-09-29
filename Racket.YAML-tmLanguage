@@ -29,14 +29,17 @@
           match: (\w|\-|\d)+
           captures:
             '1': {name: variable.parameter.racket}
-    - 
+    -
+      name: constant.language.racket
+      match: (#t|#f)
+    -
       name: meta.keywords.source.racket
       match: \b(if|lambda|cond|define|type-case|let|letrec|let!|\#lang|require|test|else|first|butfirst|bf|last|butlast|bl|rest|define-type|define-type-alias|define-struct|not|local|error|super-new|define/public|init|define/private|send|new|let\*|class)[\s\)]
       captures: 
         '1': {name: keyword.source.racket}
     - 
       name: constant.language.source.racket
-      match: \b(true|false|empty|cons|car|cdr|caar|cadr|cdar|cddr|caaar|caadr|cadar|caddr|cdaar|cdadr|cddar|cdddr|caaaar|caaadr|caadar|caaddr|cadaar|cadadr|caddar|cadddr|cdaaar|cdaadr|cdadar|cdaddr|cddaar|cddadr|cdddar|cddddr)[\s\)]
+      match: \b(#t|#f|true|false|empty|cons|car|cdr|caar|cadr|cdar|cddr|caaar|caadr|cadar|caddr|cdaar|cdadr|cddar|cdddr|caaaar|caaadr|caadar|caaddr|cadaar|cadadr|caddar|cadddr|cdaaar|cdaadr|cdadar|cdaddr|cddaar|cddadr|cdddar|cddddr)[\s\)]
     - 
       name: constant.numeric.integer.source.racket
       match: \b(0|([1-9][0-9_]*))\b
@@ -54,4 +57,3 @@
     - 
       name: storage.type.racket
       match: ([\w]+\%)
-  
